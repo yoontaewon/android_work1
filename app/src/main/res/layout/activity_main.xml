@@ -70,4 +70,16 @@
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="파일 목록 가져오기"
+        android:id="@+id/button5" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/editText2"
+        android:background="#f9d5d5" />
+
 </LinearLayout>
