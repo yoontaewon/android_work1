@@ -21,7 +21,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     private String TAG;
-    EditText e1;
+    EditText e1,e2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         e1 = (EditText) findViewById(R.id.editText);
+        e2 = (EditText) findViewById(R.id.editText2);
     }
 
     public boolean isStoragePermissionGranted() {
@@ -113,6 +114,21 @@ public class MainActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                break;
+            case R.id.button5:
+                String str = "";
+                File[] filelist = new File(strPath).listFiles();
+                for(int i = 0; i < filelist.length; i++){
+                    if(filelist[i].isDirectory()){
+                        str += "<폴더>"+ filelist[i].toString() +"\n";
+
+                    }
+                    else{
+                        str += "<파일>" + filelist[i].toString()+"\n";
+                    }
+                }
+                e2.setText(str);
+
                 break;
         }
     }
